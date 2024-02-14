@@ -14,7 +14,8 @@ internal class Program
         while (ordering)
         {
             Console.Clear();
-            string path = Path.GetFullPath("..\\CoffeeCustomers.json");
+            Directory.CreateDirectory("C:\\CoffeePayments");
+            string path = Path.GetFullPath("C:\\CoffeePayments\\CoffeeCustomers.json");
             List<Employee> employees = extractEmployees(path);
 
             Console.WriteLine(" - - - - - - - - Coffee bean - - - - - - - - - ");
