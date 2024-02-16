@@ -39,17 +39,21 @@ internal class Program
     private static bool orderAgainQuerey(bool ordering)
     {
         Console.WriteLine("Would you like to order again? [y/n]");
-        ConsoleKey response = Console.ReadKey(false).Key;
-        if (response == ConsoleKey.N)
-        {
-            ordering = false;
-        }
-        else if (response != ConsoleKey.Y && response != ConsoleKey.N)
-        {
-            Console.WriteLine("Please provide a valid response.");
-            orderAgainQuerey(ordering);
-        }
 
+        ConsoleKey response;
+        while (true)
+        {
+            response = Console.ReadKey(true).Key;
+            if (response == ConsoleKey.N)
+            {
+                ordering = false;
+                break;
+            }
+            else if (response != ConsoleKey.Y && response != ConsoleKey.N)
+            {
+                Console.WriteLine("Please provide a valid response.");
+            }
+        }
         return ordering;
     }
     /// <summary>
